@@ -1,545 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SHIELD - Free Bootstrap 3 Theme">
-    <meta name="author" content="Carlos Alvarez - Alvarez.is - blacktie.co">
-    <link rel="shortcut icon" href="assets/ico/favicon.png">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> 
+  
+  	<!-- for slider page animate --!>
+<!-- 	<link type="text/css" rel="stylesheet" media="all" href="pageAnimate.1.1.css">   -->
 
-    <title> Datalore Hacks</title>
+  
+  	<!-- for frogaloop --!>
+  	
+    <script src="froogaloop.min.js"></script>
+  
+  	<script>
+  	var iframe = document.getElementById('videotest');
+
+	// $f == Froogaloop
+	var player = $f(iframe);
+	
+	
+	var playButton = document.getElementById("play-button");
+	playButton.addEventListener("click", function() {
+	player.api("play");
+	});
+
+// 	var pauseButton = document.getElementById("pause-button");
+// 	pauseButton.addEventListener("click", function() {
+//   	player.api("pause");
+// 	});
+	
+	
+	
+  	</script>
+  
+  
+	<!-- for changestate plugin --!>
+	<script type="text/javascript"> 
+		document.documentElement.className += " js-enabled";
+	</script> 
+     
+  
+  	   <!-- for icoroll plugin --!>
+    <link rel="stylesheet" href="icoroll/icomoon/style.css" />
+    <script src="icoroll/jquery.js"></script>
+ 	<script src="icoroll/icoroll.js"></script>
+ 	<link rel="stylesheet" href="icoroll/icoroll.css" />
+ 	<link rel="stylesheet" href="icoroll/dark.css" /> <!-- this is theme css file -->
+    <script>
+ 		$(function(){
+ 		icoroll({
+ 		tip_distance:30,
+ 		back_enabled:true,
+ 		time:3000,
+ 		type:'standard' // standard for standard navigation or scroll for scroll
+		},{
+ 		position:'right',
+ 		elements:[
+ 		{ 'class':'icon-book','href':'index.html','content':'1: Introduction'},
+ 		{ 'class':'icon-pulse','href':'chapter2.html','content':'2: History'},
+ 		{ 'class':'icon-boat','href':'/chapter3','content':'3: Salmon'},
+ 		{ 'class':'icon-cloud-rain','href':'/chapter4','content':'4: Sacred Waters'},
+ 		]
+ 		});
+ 	});
+ 	</script>
+  
+    
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Bristol Bay, USA</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="assets/css/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/icomoon.css">
-    <link href="assets/css/animate-custom.css" rel="stylesheet">
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
-    
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
-    
-    <script src="assets/js/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/js/modernizr.custom.js"></script>
-    
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="assets/js/html5shiv.js"></script>
-      <script src="assets/js/respond.min.js"></script>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
   </head>
 
-  <body data-spy="scroll" data-offset="0" data-target="#navbar-main">
-  
-  
-  	<div id="navbar-main">
-      <!-- Fixed navbar -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <!-- <span class="icon icon-shield" style="font-size:30px; color:#3498db;"></span> -->
-          </button>
-         <!--  <a class="navbar-brand hidden-xs hidden-sm" href="#home"><span class="icon icon-shield" style="font-size:18px; color:#3498db;"></span></a> -->
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="#about" class="smoothScroll">About</a></li>
-			<li> <a href="#partners" class="smoothScroll"> Partners</a></li>
-			<li> <a href="#apply" class="smoothScroll"> Apply</a></li>
-			<li> <a href="#eventdetails" class="smoothScroll"> Event Details</a></li>
-			<li> <a href="#team" class="smoothScroll"> Team</a></li>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-    </div>
+  <body>
 
-  
-  
-		<!-- ==== HEADERWRAP ==== -->
-	    <div id="headerwrap" id="home" name="home">
-			<header class="clearfix">
-	  		 		<h1><!-- <span class="icon icon-shield"></span> --></h1>
-	  		 	<!-- 
-	<p>DataLore Hackathon</p>
-	  		 		<p>January 23 - 25</p>
- -->
-
-
-	  		</header>	    
-	    </div><!-- /headerwrap -->
-
-		<!-- ==== GREYWRAP ==== -->
-		<!-- 
-<div id="greywrap">
-			<div class="row">
-				<div class="col-lg-4 callout">
-					<span class="icon icon-stack"></span>
-					<h2>Bootstrap 3</h2>
-					<p>Shield Theme is powered by Bootstrap 3. The incredible Mobile First Framework is the best option to run your website. </p>
-				</div><!~~ col-lg-4 ~~>
-					
-				<div class="col-lg-4 callout">
-					<span class="icon icon-eye"></span>
-					<h2>Retina Ready</h2>
-					<p>You can use this theme with your iPhone, iPad or MacBook Pro. This theme is retina ready and that is awesome. </p>
-				</div><!~~ col-lg-4 ~~>	
-				
-				<div class="col-lg-4 callout">
-					<span class="icon icon-heart"></span>
-					<h2>Crafted with Love</h2>
-					<p>We don't make sites, we craft themes with love & passion. That is our most valued secret. We only do thing that we love.   </p>
-				</div><!~~ col-lg-4 ~~>	
-			</div><!~~ row ~~>
-		</div><!~~ greywrap ~~>
- -->
-		
-		<!-- ==== ABOUT ==== -->
-		<div class="container" id="about" name="about">
-			<div class="row white">
-			<br>
-				<h1 class="centered">About Datalore Hacks</h1>
-				<hr>
-				
-				<div class="col-lg-6">
-					<p>The Non-Fiction Cartel, StoryCode Boston, Harvard’s Bok Center, the MIT OpenDocLab, and the MIT Center for Civic Media are joining forces for a weekend long hackathon in Boston that will bring together designers, creative technologists, engineers, data scientists and filmmakers interested in cross-platform, interdisciplinary storytelling. 
-					
-</p>
-					
-				<br><br>
-				
-				</div><!-- col-lg-6 -->
-				
-				<div class="col-lg-6">
-					<p>Over the course of 48 hours, teams will brainstorm and prototype an interactive narrative experience that tells a story with data, around data, or about data. It could be a data visualization on the web, a physical installation using hardware and human bodies, or an interactive documentary experience.<br><br>Check out <a href="https://www.facebook.com/DataLoreHack">Datalore's Facebook page</a> or follow #datalorehack</p>
-					<br><br>
-				</div><!-- col-lg-6 -->
-			
-				
-			
-			</div><!-- row -->
-			
-			<div class="row white">
-				<div class="col-lg-12">
-					<img src="assets/img/Veritas_Simple.png">
-					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-					<img src="assets/img/civiclogo.jpg">
-					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-					<img src="assets/img/opendoclogo.jpg">
-					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-					<img src="assets/img/nfclogo.jpg">
-					&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
-					<img src="assets/img/storycodelogo.jpg">
-					
-				</div>
-			</div>
-			<div class="row white">
-				<br><br>
-				<h1 class="centered" id="partners">Partners</h1>
-				
-				<strong><a href="http://bokcenter.harvard.edu/">The Derek Bok Center for Teaching and Learning at Harvard</a></strong> works to support Harvard's teaching community, and to enhance and augment the teaching that takes place on Harvard's campus.  In recent years, the Bok Center has placed special emphasis on media literacy and visualization, working closely with Faculty and Graduate Students who wish to enhance their teaching with digital and especially visual media.  
-				<br><br>
-				<strong><a href="https://civic.mit.edu/">MIT Center for Civic Media</a></strong> works hand in hand with diverse communities to collaboratively create, design, deploy, and assess civic media tools and practices. We are inventors of new technologies that support and foster civic media and political action, we are a hub for the study of these technologies, and we coordinate community-based design processes locally in the Boston area, across the United States, and around the world.
-				<br><br>
-				<strong><a href="http://opendoclab.mit.edu/">MIT Open Documentary Lab</a></strong> researches and incubates new forms of documentary storytelling.  It brings storytellers, technologists and scholars together to shape the documentary storytelling practices of the future.   OpenDocLab is an interdisciplinary research group housed in the Comparative Media Studies/Writing department.
-				<br><br>
-				<strong><a href="https://www.facebook.com/TheNonFictionCartel">The Non-Fiction Cartel</a></strong> is a working collaborative that supports, creates and enhances short form, documentary media making in New England.
-				<br><br>
-				<strong><a href="http://www.meetup.com/StoryCode-Boston/">Storycode Boston</a></strong> is an open-source community for emerging and established cross-platform and immersive storytellers, spotlighting case-studies in current storytelling innovation. 
-			</div>
-		</div><!-- container -->
-		
-		
-		
-		<!-- ==== SECTION DIVIDER1 -->
-		<section class="section-divider textdivider divider1">
-			<div class="container">
-				<h1>CRAFTING STORIES FROM DATA</h1>
-				<hr>
-				<p>We live in a world that is increasingly shaped by our interaction with data, which is increasingly complex, large and accessible to few. We want to create a space for investigating the narratives that emerge from quantitative spaces so they are accessible and engaging.</p>
-			</div><!-- container -->
-		</section><!-- section -->
-		
-		
-<!-- 
-		==== SERVICES ====		<div class="container" id="services" name="services">
-			<br>
-			<br>
-			<div class="row">
-				<h2 class="centered">ONE BRAND, ONE VOICE.</h2>
-				<hr>
-				<br>
-				<div class="col-lg-offset-2 col-lg-8">
-					<p>Employees and consumers. Two halves of a brand’s entirety, the whole of a brand’s audience. Sometimes these two halves have very different viewpoints, creating a weak spot in the brand story. Weakness tarnishes credibility. Brands that aren’t credible aren’t viable.
-					</p>
-					<p>We squash weakness by designing the whole brand story. It’s crafted around the truism held by employees and consumers to create an experience that connects from the inside out.</p>
-					<p>By being true to the brand we represent, we elevate the audiences’ relationship to it. Like becomes love becomes a passion. Passion becomes advocacy. And we see the brand blossom from within, creating a whole story the audience embraces. That’s when the brand can truly flex its muscles.</p>
-				</div>col-lg			</div>row			
-			<div class="row">
-				<h2 class="centered">MOBILE FIRST THINKING, ALWAYS.</h2>
-				<hr>
-				<br>
-				<div class="col-lg-offset-2 col-lg-8">
-					<img class="img-responsive" src="assets/img/iphone.png" alt="">
-				</div>col			</div>row		</div>container  		
-
-		==== SECTION DIVIDER2		<section class="section-divider textdivider divider2">
-			<div class="container">
-				<h1>DESIGN IS AN INTERACTION</h1>
-				<hr>
-				<p>To develop a deeper and more meaningful connection with consumers, we believe design must invite them to take part in the conversation.</p>
-			</div>container		</section>section
- -->
-
-		<!-- ==== TEAM MEMBERS ==== -->
-		<div class="container" id="apply" name="team">
-		<br>
-		
-		
-		
-		
-		
-		
-		
-		
-						<h1 class="centered" id="apply">APPLY FOR DATALORE HACKS</h1>
-				<br>
-				<div class="col-lg-12">
-				
-				<p>We’re looking for <strong>filmmakers, artists, designers, developers, engineers, scientists, scholars, researchers, journalists, and storytellers</strong> to join interdisciplinary teams of 4-5 people, which we will curate. Each team will start with a primary dataset that drives their story-making. If you want to participate on a team and explore creative data-driven storytelling, <a href="https://docs.google.com/forms/d/1YdoMgtYhlzHyn56PuXy7jtMZekxqg7ld_Z6EGj9cr6I/viewform">apply here</a>.  <br><br><strong>If you are currently working with a dataset that you want to use to tell a story,</strong> <a href="https://docs.google.com/forms/d/1HHgMwXuC6Nr83epHR_e-8P5Rp00pevsAaPAU7GRs4lQ/viewform">apply here</a>. The data can be qualitative or quantitative. It can be drawn from your research, an open archive, census or government data, or some other source. 
-				
-				
-
-<br><br>
-You can submit your application to participate from Dec 10 - Dec 31 and we will notify you by January 8th of your submission status. If you have questions, email datalore@mit.edu
-<br>
-				</div>
-		
-
-
-			</div><!-- row -->
-		
-			<div class="row white centered">
-				<div class="col-lg-6 centered">
-					<h3><a href="https://docs.google.com/forms/d/1YdoMgtYhlzHyn56PuXy7jtMZekxqg7ld_Z6EGj9cr6I/viewform">General application</a></h3>
-				</div><!-- col-lg-3 -->
-				
-				<div class="col-lg-6 centered">
-					<h3><a href="https://docs.google.com/forms/d/1HHgMwXuC6Nr83epHR_e-8P5Rp00pevsAaPAU7GRs4lQ/viewform">Apply with a dataset</a></h3>	
-				</div><!-- col-lg-3 -->
-			</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 	
-		</div><!-- container -->
 
-		<!-- 
-==== GREYWRAP ====		<div id="greywrap">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 centered">
-						<img class="img-responsive" src="assets/img/macbook.png" align="">
-					</div>
-					<div class="col-lg-4">
-						<h2>We Are Hiring!</h2>
-						<p>Do you want to be one of use? Sure you want, because we are an awesome team!. Here we work hard every day to craft pixel perfect sites.</p>
-						<p><a class="btn btn-success">Contact Us</a></p>
-					</div>					
-				</div>row			</div>
-			<br>
-			<br>
-		</div>greywrap		
-		==== SECTION DIVIDER3		<section class="section-divider textdivider divider3">
-			<div class="container">
-				<h1>DESIGN SOLVE PROBLEMS</h1>
-				<hr>
-				<p>From the purely practical to the richly philosophical, design is the solution to a host of challenges.</p>
-			</div>container		</section>section		
-		==== PORTFOLIO ====		<div class="container" id="portfolio" name="portfolio">
-		<br>
-			<div class="row">
-				<br>
-				<h1 class="centered">WE CREATE COOL STUFF</h1>
-				<hr>
-				<br>
-				<br>
-			</div>/row			<div class="container">
-			<div class="row">	
-			
-				PORTFOLIO IMAGE 1				<div class="col-md-4 ">
-			    	<div class="grid mask">
-						<figure>
-							<img class="img-responsive" src="assets/img/portfolio/folio01.jpg" alt="">
-							<figcaption>
-								<h5>DASHBOARD</h5>
-								<a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-							</figcaption>/figcaption						</figure>/figure			    	</div>/grid-mask				</div>/col				
-				
-						 MODAL SHOW THE PORTFOLIO IMAGE. In this demo, all links point to this modal. You should create
-						      a modal for each of your projects.						      
-						  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						    <div class="modal-dialog">
-						      <div class="modal-content">
-						        <div class="modal-header">
-						          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						          <h4 class="modal-title">Project Title</h4>
-						        </div>
-						        <div class="modal-body">
-						          <p><img class="img-responsive" src="assets/img/portfolio/folio01.jpg" alt=""></p>
-						          <p>This project was crafted for Some Name corp. Detail here a little about your job requirements and the tools used. Tell about the challenges faced and what you and your team did to solve it.</p>
-						          <p><b><a href="#">Visit Site</a></b></p>
-						        </div>
-						        <div class="modal-footer">
-						          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						        </div>
-						      </div>/.modal-content						    </div>/.modal-dialog						  </div>/.modal				
-				
-				PORTFOLIO IMAGE 2				<div class="col-md-4">
-			    	<div class="grid mask">
-						<figure>
-							<img class="img-responsive" src="assets/img/portfolio/folio02.jpg" alt="">
-							<figcaption>
-								<h5>UI DESIGN</h5>
-								<a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-							</figcaption>/figcaption						</figure>/figure			    	</div>/grid-mask				</div>/col				
-				PORTFOLIO IMAGE 3				<div class="col-md-4">
-			    	<div class="grid mask">
-						<figure>
-							<img class="img-responsive" src="assets/img/portfolio/folio03.jpg" alt="">
-							<figcaption>
-								<h5>ANDROID PAGE</h5>
-								<a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-							</figcaption>/figcaption						</figure>/figure			    	</div>/grid-mask				</div>/col			</div>/row
-				PORTFOLIO IMAGE 4			<div class="row">	
-				<div class="col-md-4 ">
-			    	<div class="grid mask">
-						<figure>
-							<img class="img-responsive" src="assets/img/portfolio/folio04.jpg" alt="">
-							<figcaption>
-								<h5>PROFILE</h5>
-								<a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-							</figcaption>/figcaption						</figure>/figure			    	</div>/grid-mask				</div>/col				
-				PORTFOLIO IMAGE 5				<div class="col-md-4">
-			    	<div class="grid mask">
-						<figure>
-							<img class="img-responsive" src="assets/img/portfolio/folio05.jpg" alt="">
-							<figcaption>
-								<h5>TWITTER STATUS</h5>
-								<a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-							</figcaption>/figcaption						</figure>/figure			    	</div>/grid-mask				</div>/col				
-				PORTFOLIO IMAGE 6				<div class="col-md-4">
-			    	<div class="grid mask">
-						<figure>
-							<img class="img-responsive" src="assets/img/portfolio/folio06.jpg" alt="">
-							<figcaption>
-								<h5>PHONE MOCKUP</h5>
-								<a data-toggle="modal" href="#myModal" class="btn btn-primary btn-lg">Take a Look</a>
-							</figcaption>/figcaption						</figure>/figure			    	</div>/grid-mask				</div>/col			</div>/row			<br>
-			<br>
-		</div>/row	</div>/container
-		==== SECTION DIVIDER4 ====		<section class="section-divider textdivider divider4">
-			<div class="container">
-				<h1>DESIGN CREATES EMOTIONAL CONNECTION</h1>
-				<hr>
-				<p>There’s more to design than meets the eye. It’s when it meets the heart that design creates a meaningful, lasting connection with the audience.</p>
-			</div>container		</section>section		
-		==== BLOG ====		<div class="container" id="blog" name="blog">
-		<br>
-			<div class="row">
-				<br>
-				<h1 class="centered">WE ARE STORYTELLERS</h1>
-				<hr>
-				<br>
-				<br>
-			</div>/row			
-			<div class="row">
-				<div class="col-lg-6 blog-bg">
-					<div class="col-lg-4 centered">
-					<br>
-						<p><img class="img img-circle" src="assets/img/team/team04.jpg" width="60px" height="60px"></p>
-						<h4>Jaye Smith</h4>
-						<h5>Published Aug 30.</h5>
-					</div>
-					<div class="col-lg-8 blog-content">
-						<h2>We Define Success</h2>
-						<p>Armed with insight, we embark on designing the right brand experience that engages the audience. It encompasses both the strategic direction and creative execution that solves a business problem and brings the brand to life.</p>
-						<p>In the create phase, the big idea is unleashed to the world through different media touchpoints. This is when we watch the audience fall in love all over again with our client’s brand.</p>
-						<p><a href="#" class="icon icon-link"> Read More</a></p>
-						<br>
-					</div>
-				</div>/col				
-				<div class="col-lg-6 blog-bg">
-					<div class="col-lg-4 centered">
-					<br>
-						<p><img class="img img-circle" src="assets/img/team/team03.jpg" width="60px" height="60px"></p>
-						<h4>Michele Lampa</h4>
-						<h5>Published Aug 28.</h5>
-					</div>
-					<div class="col-lg-8 blog-content">
-						<h2>A Beautiful Story</h2>
-						<p>Armed with insight, we embark on designing the right brand experience that engages the audience. It encompasses both the strategic direction and creative execution that solves a business problem and brings the brand to life.</p>
-						<p>In the create phase, the big idea is unleashed to the world through different media touchpoints. This is when we watch the audience fall in love all over again with our client’s brand.</p>
-						<p><a href="#" class="icon icon-link"> Read More</a></p>
-						<br>
-					</div>
-				</div>/col			</div>/row			<br>
-			<br>
-		</div>/container
+
+
+
+
+
+
+
+<div class="container-fluid">
+<!-- 	<img id="test2" src="img/blackimage.png" class="img-responsive"> -->
+	<div class="row">
+		<div class="col-md-12" id="sctest" style="margin:0px; padding:0px;">
+<!-- 			<div class="imageunder"> -->
+  		  		<div id="videocontainer" class="imageunder">
+  		    		<video autoplay class="changeable default" loop>
+    					<source src="testvideo.mp4" type="video/mp4">
+		  			</video>
+		  		</div>
+		  	
+		  		<div class="text-div changeable default imageunder2">
+      				<br><br><br><br><br><br>
+      				<h1>BRISTOL BAY, USA</h1>
+            		<p></p><br>
+              		<a href="#" class="btn btn-lg btn-default trigger" id="play-button" data-activates="more">BEGIN</a>
+      	  		</div>
+  		 			<iframe id="videotest" style="padding-left:15px; padding-right:15px; margin-top:-10px;" class="changeable more" src="//player.vimeo.com/video/81690173?api=1andamp;autoplay=1" width="960" height="540" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  	  	</div>
+	</div>	  		
+		 
+	
+		  	
+		  	
+		  	
+		  	
+
+</div>
+
+
+
+
+
+
+
+
+
+    
+    
+    <!-- Footer content --!>
+    <ul id="footer" class="footer_fullwidth">
+    <li> <a href="#" class="dropup"gt;Item</a>
+    BRISTOL BAY, USA: THE STORY OF ALASKA'S PEBBLE MINE
+	</li>
+	<li> <a href="#" Item</a>
+<!--     ABOUT THE DOCUMENTARY -->
+	</li>
+<!-- 
+	<li> <a href="#" </a>
+    skip intro video
+	</li>
+	
  -->
-		
-		<!-- ==== SECTION DIVIDER6 ==== -->
-		<section class="section-divider textdivider divider6">
-			<div class="container">
-				<h1>APPLY FOR DATALORE HACKS</h1>
-				<hr>
-				<p>MIT Center for Civic Media</p>
-				<p>75 Amherst St. (3rd floor)</p>
-				<p>Cambridge, MA</p>
-				
-			</div><!-- container -->
-		</section><!-- section -->
-		
-		<div class="container" id="eventdetails" name="contact">
-			<div class="row">
-			<br>
-				
-				
-				
-				<h1 class="centered">EVENT DETAILS</h1>
-				
-				<div class="col-lg-12">
-				<p>Datalore Hacks will begin on Friday evening (1/23) at the MIT Media Lab and will run through the weekend with final team presentations on Sunday evening. We will provide all meals, wifi, group workspace and mentorship throughout the event. Participants must cover the cost of transportation and accommodation. 
+	
+	
+<!-- 
+	
+	<li id="social"><!~~ Begin Social Icons Item ~~>
+    
+    
+        <ul><!~~ Social Icons ~~>
+        	<li><a href="#">skipthisvideo</a><li>
+            <!~~ The span is the text appearing on hover, use the tooltip class in the link ~~>
+            <li><a href="#" class="tooltip"><img src='img/icons/twitter.png' alt="" class="footer_icon" /><span>Twitter</span></a></li>
+            <li><a href="#" class="tooltip"><img src='img/icons/facebook.png' alt="" class="footer_icon" /><span>Facebook</span></a></li>
+            
+        </ul><!~~ End Social Icons ~~>
+    
+    
+    </li><!~~ End Social Icons Item ~~>
 
-<br><br>
-<strong>Friday January 23rd:</strong> Introductions and initial team meetings. Initial parameters for your project will be finalized by you and your team. 
-<br>
-<strong>Saturday January 24th:</strong> Hacking in small teams
-<br>
-<strong>Sunday January 25th:</strong> Continuing hacking, final presentations + celebration
-<br><br>
-				</div>
-
-
-
-
-
-		<div class="row white centered">
-				<h1 class="centered" id="team">DATALORE ORGANIZING TEAM</h1>
-				<hr>
-				<br>
-				<br>
-				<div class="col-lg-4 centered">
-					<img class="img img-circle" src="assets/img/team/team01.jpg" height="120px" width="120px" alt="">
-					<br>
-					<h4><b>Nadja Oertelt</b></h4>
-					<p>Nadja is a scientist, producer and documentary filmmaker who likes to bring art into quantitative spaces. She currently works at Harvard producing <a href="http://www.mcb80x.org/">The Fundamentals of Neuroscience</a> - an interactive, open, multimedia online course on Neuroscience.  She graduated from MIT in 2007 with a BS in Neuroscience and has studied film, paleolithic archaeology and paleoanthropology. <br><a href="https://twitter.com/nadjao">@nadjao</a></p>
-				</div><!-- col-lg-3 -->
-				
-				<div class="col-lg-4 centered">
-					<img class="img img-circle" src="assets/img/team/sean.jpg" height="120px" width="120px" alt="">
-					<br>
-					<h4><b>Sean Flynn</b></h4>
-			
-					<p>Sean Flynn is a documentary producer and festival programmer. He is the Director of the Points North Documentary Forum at <a href="http://www.camdenfilmfest.org/">Camden International Film Festival</a> and a researcher at <a href="http://opendoclab.mit.edu/">MIT's Open Documentary Lab</a>, where he is currently pursuing a master's degree. <br><a href="https://twitter.com/seanflynnfilm">@seanflynnfilm</a></p>
-				</div><!-- col-lg-3 -->
-				
-				<div class="col-lg-4 centered">
-					<img class="img img-circle" src="assets/img/team/heather.jpg" height="120px" width="120px" alt="">
-					<br>
-					<h4><b>Heather Craig</b></h4>
-					<p>Heather Craig focuses her work on the connections between interactive media and community engagement. She is currently a graduate student at MIT's Center for Civic Media and Comparative Media Studies program. Her experience includes running a non-profit media education organization as well as producing media for broadcast, interactive exhibitions, and online distribution.<br><a href="https://twitter.com/_hhcraig">@_hhcraig</a></p>
-				</div><!-- col-lg-3 -->
-			</div><!-- row -->
-			
-			<br><br>
-			
-			<div class="row white centered">
-				
-				<div class="col-lg-4 centered">
-					<img class="img img-circle" src="assets/img/team/jonathan.jpg" height="120px" width="120px" alt="">
-					<br>
-					<h4><b>Johnathan Carr</b></h4>
-					<p>Johnathan Carr is an award-winning filmmaker, media designer, and native of Greater Boston. He has made over a hundred film & video productions from all sides of the camera, and since 2010 has worked with the American Repertory Theater as their resident filmmaker. Johnathan has also designed media projection for numerous live productions in New York and Boston including last year's Tony Award-winning Pippin.</p>
-				</div><!-- col-lg-3 -->
-				
-				
-				<div class="col-lg-4 centered">
-					<img class="img img-circle" src="assets/img/team/sands.jpg" height="120px" width="120px" alt="">
-					<br>
-					<h4><b>Sands Fish</b></h4>
-					<p>Sands Fish is a data scientist and computational artist. His current work focuses on the digital public sphere, and communities of discourse in citizen media. He is a research fellow at <a href="http://cyber.law.harvard.edu/">Harvard's Berkman Center for Internet & Society</a> and a research affiliate at <a href="https://civic.mit.edu/">MIT's Center for Civic Media</a>.<br>@sandsfish</p>
-				</div><!-- col-lg-3 -->
-				
-				<div class="col-lg-4 centered">
-					<img class="img img-circle" src="assets/img/team/dalia.jpg" height="120px" width="120px" alt="">
-					<br>
-					<h4><b>Dalia Othman</b></h4>
-					<p>Dalia Othman is a Research Fellow at the Berkman Center for Internet & Society and Visiting Scholar at MIT’s Center for Civic Media. Recently, Dalia’s research has focused on online civic engagement in the Arab World and media discourse. Her work has also focused on forms of digital storytelling and storytelling through data that promotes socio-political change. Her work on NetStories.org aims to help communities and journalists find the best online tools to tell their stories. <br>@daliaothman</p>
-				</div><!-- col-lg-3 -->
-				
-				
-			</div><!-- row -->
-
-			
-			
-			
-			
-			
-			
-			
-
-
-
-
-
-
-
-
-			<br>
-			<br>			
-		
-		</div><!-- container -->
-
-		</div>
-
-		<div id="footerwrap">
-			<div class="container">
-				<h4>This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</h4>
-			</div>
-		</div>
+	
+	
+	
+ -->
+	
+	
+	
+    </ul>
+    
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-		
-	<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-57528275-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
-	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="assets/js/retina.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.easing.1.3.js"></script>
-    <script type="text/javascript" src="assets/js/smoothscroll.js"></script>
-	<script type="text/javascript" src="assets/js/jquery-func.js"></script>
+    
+    
+   
+    
+    
+    
+    <!-- For Footer plugin --!>
+    <script src="HTML/js/footer_plugin.js"></script>
+    <script src="HTML/js/footer.js"></script>
+    <script src="footer.min.js"></script>
+    <link rel="stylesheet" href="HTML/css/footer.css" />
+    
+    <script>
+	$(document).ready(function($){
+	$('#footer').stickyFooter({
+		dropup_speed_show : 300, // Time (in milliseconds) to show a drop down
+		dropup_speed_hide : 200, // Time (in milliseconds) to hide a drop down
+		dropup_speed_delay : 200, // Time (in milliseconds) before showing a drop down
+		footer_effect : 'open_close_toggle', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
+		footer_click_outside :1, // Clicks outside the drop down close it (1 = true, 0 = false)
+		showhidefooter : 'show', // Footer can be hidden when the page loads
+		hide_speed : 1000, // Time to hide the footer (in milliseconds) if the 'showhidefooter' option is set to 'hide'
+		hide_delay : 2000 // Time before hiding the footer (in milliseconds) if the 'showhidefooter' option is set to 'hide'
+	});	
+	});
+	</script>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
+    
+    <!-- for jquerydivstatechange plugin --!>
+    
+    <script type="text/javascript" src="jquery.content.changer.js"></script>
+    <script type="text/javascript"> 
+    $(function() {
+		$('#sctest').contentChanger({
+			animationDuration: 600,
+			animationMode: 'fade',	
+			triggerScope: 'body'
+		}); 
+	});
+	</script>
+	
+    
+    <!-- for fluidvids --!>
+  	<script src="fluidvids.js"></script>
+  	
+  	<script>
+		$(function(){
+		fluidvids.init({
+  		selector: ['iframe', 'object'], // runs querySelectorAll()
+ 		players: ['www.youtube.com', 'player.vimeo.com'] // players to support
+		});
+		});
+	</script>  
+  
+    
   </body>
 </html>
