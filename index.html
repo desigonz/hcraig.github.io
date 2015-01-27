@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  
+  	<!-- for slider page animate --!>
+<!-- 	<link type="text/css" rel="stylesheet" media="all" href="pageAnimate.1.1.css">   -->
+
+  
+  	<!-- for frogaloop --!>
+  	
+    <script src="froogaloop.min.js"></script>
+  
+  	<script>
+  	var iframe = document.getElementById('videotest');
+
+	// $f == Froogaloop
+	var player = $f(iframe);
+	
+	
+	var playButton = document.getElementById("play-button");
+	playButton.addEventListener("click", function() {
+	player.api("play");
+	});
+
+// 	var pauseButton = document.getElementById("pause-button");
+// 	pauseButton.addEventListener("click", function() {
+//   	player.api("pause");
+// 	});
+	
+	
+	
+  	</script>
+  
+  
+          <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+        <style type="text/css">
+        
+			.back-link a {
+				color: #4ca340;
+				text-decoration: none; 
+				border-bottom: 1px #4ca340 solid;
+			}
+			.back-link a:hover,
+			.back-link a:focus {
+				color: #408536; 
+				text-decoration: none;
+				border-bottom: 1px #408536 solid;
+			}
+			h1 {
+				height: 100%;
+				/* The html and body elements cannot have any padding or margin. */
+				margin: 0;
+				font-size: 14px;
+				font-family: 'Open Sans', sans-serif;
+				color: #1c1d1e;
+				font-size: 32px;
+				margin-bottom: 3px;
+			}
+			h2 {
+				color: #1c1d1e;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: normal;
+				font-size: 5px;
+			}
+			
+			h3 {
+				color: #fff;
+				font-family: 'Open Sans', sans-serif;
+				font-weight: normal;
+				font-size: 5px;
+			}
+			
+			.entry-header .inner {
+				text-align: left;
+				margin: 0 auto 20px auto;
+				width: 800px;
+			}
+			.entry-header { padding-top: 20px; background-color: #fff; width:100%; position: fixed; top: 0; left: 0; z-index: 999999}
+		</style>
+  
+  
+  
+  
+	<!-- for changestate plugin --!>
+	<script type="text/javascript"> 
+		document.documentElement.className += " js-enabled";
+	</script> 
+     
+  
+  	   <!-- for icoroll plugin --!>
+    <link rel="stylesheet" href="icoroll/icomoon/style.css" />
+    <script src="icoroll/jquery.js"></script>
+ 	<script src="icoroll/icoroll.js"></script>
+ 	<link rel="stylesheet" href="icoroll/icoroll.css" />
+ 	<link rel="stylesheet" href="icoroll/dark.css" /> <!-- this is theme css file -->
+    <script>
+ 		$(function(){
+ 		icoroll({
+ 		tip_distance:30,
+ 		back_enabled:true,
+ 		time:3000,
+ 		type:'standard' // standard for standard navigation or scroll for scroll
+		},{
+ 		position:'right',
+ 		elements:[
+ 		{ 'class':'icon-book','href':'index.html','content':'1: History'},
+ 		{ 'class':'icon-boat','href':'doc.html','content':'2: Salmon'},
+ 		{ 'class':'icon-pulse','href':'/doc2.html','content':'3: Fault Hunt'},
+ 		{ 'class':'icon-cloud-rain','href':'/doc3.html','content':'4: Sacred Waters'},
+ 		{ 'class':'icon-ship','href':'/?page=5&st=5','content':'5: Commercial Fishing'}
+ 		]
+ 		});
+ 	});
+ 	</script>
+
+  
+    
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Bristol Bay, USA</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+  </head>
+
+  <body>
+
+	
+
+
+
+
+
+
+
+
+<div class="container-fluid">
+<!-- 	<img id="test2" src="img/blackimage.png" class="img-responsive"> -->
+	<div class="row">
+		<div class="col-md-12" id="sctest" style="margin:0px; padding:0px;">
+<!-- 			<div class="imageunder"> -->
+  		  		<div id="videocontainer" class="imageunder">
+  		    		<video autoplay class="changeable default" loop>
+    					<source src="testvideo.mp4" type="video/mp4">
+		  			</video>
+		  		</div>
+		  	
+		  		<div class="text-div changeable default imageunder2">
+      				<br><br><br><br><br><br>
+      				<h1>BRISTOL BAY, USA</h1>
+            		<p></p><br>
+              		<a href="#" class="btn btn-lg btn-default trigger" id="play-button" data-activates="more">BEGIN</a>
+      	  		</div>
+  		 			<iframe id="videotest" style="padding-left:15px; padding-right:15px; margin-top:-10px;" class="changeable more" src="//player.vimeo.com/video/81690173?api=1andamp;autoplay=1" width="960" height="540" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  	  				
+  	  				
+
+       	<main class="changeable more">
+       	 
+	     <section id="slide-1" class="homeSlide changeable more">
+	        	<div class="bcg" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-1">
+		        	<div class="hsContainer">
+			    		<div class="hsContent" data-center="opacity: 1" data-10-top="opacity: .5" data-anchor-target="#slide-1 h2">
+				    		<h2 style="padding-bottom:00px; font-size: 60px; color:#fff;">BRISTOL BAY, USA</h2>
+				    		<br>
+				    		<p style="opacity:1; padding-bottom:200px; color:#fff;">|  SCROLL DOWN  |</p>
+			    		</div>
+		        	</div>
+	        	</div>
+		    </section>
+		    
+		    <section id="slide-2" class="changeable more">
+		    	<div class="bcg" data-0="background-color:rgb(64,66,67);" data-top="background-color:(0,0,0);"  data-anchor-target="#slide-2">
+			    	<div class="hsContainer">
+			    		<div class="hsContent">
+				    		<h2 style="text-align:left;" data-center="opacity: 1" data--200-bottom="opacity: 0" data-206-top="opacity: 1" data-0-top="opacity: 0" data-anchor-target="#slide-2 h2">
+								“Of all the fish fights that threaten our local seafood, nothing is bigger than the fight over Bristol Bay and the Pebble Mine.”
+								<br><br>-Paul Greenberg, author of "Four Fish"
+							</h2>
+				    		<p data-center="opacity: 1" data--200-bottom="opacity: 0" data-206-top="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-2 h2"></p>
+			    		</div>
+		        	</div>
+		    	</div>
+		    </section>
+
+  <section id="slide-3" class="homeSlide homeSlideTall2 changeable more">
+		    	<div class="bcg">
+			    	&nbsp;
+
+		    	</div>
+		 
+			    		</div>
+			    	</div>
+		    	</div>
+		    	<div class="bcg bcgtest" data-300-bottom="opacity: 0;" data-100-bottom="opacity: 1;" data-anchor-target="#slide-3">
+		
+		    	</div>
+		    </section>
+
+<section id="slide-3" class="homeSlide changeable more">
+	<div class="bcg"  data-anchor-target="#slide-3">
+
+    	</div>
+    	
+    </div>
+</section>
+		    
+		<section id="slide-4" class="homeSlide homeSlideTall changeable more">
+			<div class="bcg" data-center="background-position: 50% 0px;" data-bottom-top="background-position: 50% 100px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-4">
+				<div class="curtainContainer">
+		
+			
+					
+				</div>
+			</div>
+		</section>
+		    
+		    
+		    
+		    
+		    		    <section id="slide-5" class="homeSlide homeSlideTall2 changeable more">
+		    	<div class="bcg">
+			    	&nbsp;
+		    	</div>
+		    	<div class="bcg bcg2" data-bottom-top="opacity: 0;" data--33p-top="opacity: 0;" data--66p-top="opacity: 1;" data-anchor-target="#slide-5">
+			    	<div class="hsContainer">
+				    	<div class="hsContent" data-bottom-top="opacity: 0;" data-center="opacity: 1" data-anchor-target="#slide-5">
+				    		<h2>“Perhaps it was God who put these two great resources right next to each other," said John T. Shively, the chief executive of a foreign consortium that wants to mine the copper and gold deposit. "Just to see what people would do with them.”<br><br>-New York Times, August 2008</h2>
+				    		<!-- <p>Showcase your beautiful images before blurring the scene and fading in your headline.</p> -->
+			    		</div>
+			    	</div>
+		    	</div>
+		  
+		    </section>
+		    
+		    
+		    
+		    
+		    
+		    <section id="slide-5" class="homeSlide homeSlideTall2 changeable more">
+		    	<div class="bcg">
+			    	&nbsp;
+		    	</div>
+		    	<div class="bcg bcg2" data-bottom-top="opacity: 0;" data--33p-top="opacity: 0;" data--66p-top="opacity: 1;" data-anchor-target="#slide-5">
+			    	<div class="hsContainer">
+				    	<div class="hsContent" data-bottom-top="opacity: 0;" data-center="opacity: 1" data-anchor-target="#slide-5">
+				    		<h2>“Perhaps it was God who put these two great resources right next to each other," said John T. Shively, the chief executive of a foreign consortium that wants to mine the copper and gold deposit. "Just to see what people would do with them.”<br><br>-New York Times, August 2008</h2>
+				    		<!-- <p>Showcase your beautiful images before blurring the scene and fading in your headline.</p> -->
+			    		</div>
+			    	</div>
+		    	</div>
+		    	<div class="bcg bcg3" data-300-bottom="opacity: 0;" data-100-bottom="opacity: 1;" data-anchor-target="#slide-5">
+			    	<div class="hsContainer">
+				    	<div class="hsContent" data-100-bottom="opacity: 0;" data-bottom="opacity: 1;" data-anchor-target="#slide-5">
+				    		<h2>Stay tuned for additional content</h2>
+				    		<!-- <p>Chapter 2: Hunting Fault Lines</p> -->
+			    		</div>
+			    	</div>
+		    	</div>
+		    </section>
+		    
+		    
+		    
+	
+		    
+		
+		</main>
+
+  	  	
+  	  	
+  	  	</div>
+	</div>	  		
+		 
+	
+		  	
+		  	
+		  	
+		  	
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <!-- Footer content --!>
+    <ul id="footer" class="footer_fullwidth">
+    <li> <a href="#" class="dropup"gt;Item</a>
+    BRISTOL BAY, USA: THE STORY OF ALASKA'S PEBBLE MINE
+	</li>
+<!-- 
+	<li> <a href="#" Item</a>
+    ABOUT THE DOCUMENTARY
+	</li>
+ -->
+<!-- 
+	<li> <a href="#" </a>
+    skip intro video
+	</li>
+	
+ -->
+	
+	
+<!-- 
+	
+	<li id="social"><!~~ Begin Social Icons Item ~~>
+    
+    
+        <ul><!~~ Social Icons ~~>
+        	<li><a href="#">skipthisvideo</a><li>
+            <!~~ The span is the text appearing on hover, use the tooltip class in the link ~~>
+            <li><a href="#" class="tooltip"><img src='img/icons/twitter.png' alt="" class="footer_icon" /><span>Twitter</span></a></li>
+            <li><a href="#" class="tooltip"><img src='img/icons/facebook.png' alt="" class="footer_icon" /><span>Facebook</span></a></li>
+            
+        </ul><!~~ End Social Icons ~~>
+    
+    
+    </li><!~~ End Social Icons Item ~~>
+
+	
+	
+	
+ -->
+	
+	
+	
+    </ul>
+    
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    
+   
+    
+    
+    
+    <!-- For Footer plugin --!>
+    <script src="HTML/js/footer_plugin.js"></script>
+    <script src="HTML/js/footer.js"></script>
+    <script src="footer.min.js"></script>
+    <link rel="stylesheet" href="HTML/css/footer.css" />
+    
+    <script>
+	$(document).ready(function($){
+	$('#footer').stickyFooter({
+		dropup_speed_show : 300, // Time (in milliseconds) to show a drop down
+		dropup_speed_hide : 200, // Time (in milliseconds) to hide a drop down
+		dropup_speed_delay : 200, // Time (in milliseconds) before showing a drop down
+		footer_effect : 'open_close_toggle', // Drop down effect, choose between 'hover_fade', 'hover_slide', etc.
+		footer_click_outside :1, // Clicks outside the drop down close it (1 = true, 0 = false)
+		showhidefooter : 'show', // Footer can be hidden when the page loads
+		hide_speed : 1000, // Time to hide the footer (in milliseconds) if the 'showhidefooter' option is set to 'hide'
+		hide_delay : 2000 // Time before hiding the footer (in milliseconds) if the 'showhidefooter' option is set to 'hide'
+	});	
+	});
+	</script>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="../../assets/js/docs.min.js"></script>
+    
+    
+    <script src="js/imagesloaded.js"></script>
+    <script src="js/skrollr.js"></script>
+    <script src="js/_main.js"></script>
+    
+    <!-- for jquerydivstatechange plugin --!>
+    
+    <script type="text/javascript" src="jquery.content.changer.js"></script>
+    <script type="text/javascript"> 
+    $(function() {
+		$('#sctest').contentChanger({
+			animationDuration: 600,
+			animationMode: 'fade',	
+			triggerScope: 'body'
+		}); 
+	});
+	</script>
+	
+    
+    <!-- for fluidvids --!>
+  	<script src="fluidvids.js"></script>
+  	
+  	<script>
+		$(function(){
+		fluidvids.init({
+  		selector: ['iframe', 'object'], // runs querySelectorAll()
+ 		players: ['www.youtube.com', 'player.vimeo.com'] // players to support
+		});
+		});
+	</script>  
+  
+    
+  </body>
+</html>
