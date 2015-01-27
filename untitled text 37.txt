@@ -1,0 +1,6 @@
+import math
+x = int(raw_input('Enter a number (x): '))
+y = int(raw_input('Enter another number (y): '))
+print "x^2 = " + str(x**y)
+print "log(x) = " + str((math.log(x, 2)))
+
