@@ -1,3 +1,93 @@
+<?php
+use phpforms\Form;
+use phpforms\Validator\Validator;
+
+/* =============================================
+    start session and include form class
+============================================= */
+
+session_start();
+include_once '../Form.php';
+
+/* =============================================
+    validation if posted
+============================================= */
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    include_once '../Validator/Validator.php';
+    include_once '../Validator/Exception.php';
+    $validator = new Validator($_POST);
+    $required = array('username', 'useremail', 'userphone', 'message');
+    foreach ($required as $required) {
+        $validator->required()->validate($required);
+    }
+    $validator->maxLength(100)->validate('message');
+    $validator->email()->validate('useremail');
+    $validator->captcha('captcha')->validate('captcha');
+
+    // check for errors
+    if ($validator->hasErrors()) {
+
+        /* ============================================================
+        Errors are stored in session, so if the form is sent to a validation page,
+        and the validation failed sends back to the form with header(),
+        the errors will be displayed.
+        ============================================================ */
+
+        $_SESSION['errors']['my-contact-form'] = $validator->getAllErrors();
+    } else {
+        $options = array(
+            'from_email'     =>  'contact@codecanyon.creation-site.org',
+            'from_name'      =>  'phpforms',                                                                    // optional
+            'reply_to'       =>  'contact@codecanyon.creation-site.org',                                        // optional
+            'adress'         =>  addslashes($_POST['useremail']),
+            // 'cc'             =>  'gilles.migliori@free.fr',                                                     // optional
+            'bcc'            =>  'gilles.migliori@gmail.com',                        // optional
+            'subject'        =>  'contact from phpforms',
+            'attachments'    =>  'img/wallacegromit.jpg',                                                       // optional
+            'html_template'  => '../mailer/email-templates/contact-email.html',                                 // optional
+            'css_template'   => '../mailer/email-templates/contact-email.css',
+            'filter_values'  => '',                                                                             // optional
+            'sent_message'   => '<p class="alert alert-success">Your message has been successfully sent !</p>', // optional
+            'display_errors' => true                                                                            // optional, default false
+        );
+        $sent_message = Form::sendAdvancedMail($options);
+        Form::clear('my-contact-form');
+        /*$from_email = 'contact@codecanyon.creation-site.org';
+        $adress = 'gilles.migliori@gmail.com';
+        $subject = 'test';
+        $filter_values = 'my-contact-form, captcha, submit-btn, captchaHash';
+        $sent_message = Form::sendMail($from_email, $adress, $subject, $filter_values);*/
+    }
+}
+
+/* ==================================================
+    for class and methods documentation,
+    go to documentation/index.html
+================================================== */
+
+$form = new Form('my-contact-form');
+$form->startFieldset('Please fill in this form to contact us');
+$form->addInput('text', 'username', '', 'Your name : ', 'required=required');
+$form->addInput('email', 'useremail', '', 'Your email : ', 'required=required');
+$form->addInput('text', 'userphone', '', 'Your phone : ', 'required=required');
+$form->addOption('subject', 'Support', 'Support');
+$form->addOption('subject', 'Sales', 'Sales');
+$form->addOption('subject', 'Other', 'Other');
+$form->addSelect('subject', 'Subject : ');
+$form->addTextarea('message', '', 'Your message : ', 'cols=30, rows=4, required=required');
+$form->addPlugin('word-character-count', '#message', 'default', array('%maxAuthorized%' => 100));
+$_SESSION['newsletter'] = 1;
+ // to add default-check.
+$form->addCheckbox('newsletter-checkboxes', '', 'newsletter', 1);
+$form->printCheckboxGroup('newsletter-checkboxes', 'Suscribe to Newsletter :');
+$form->addInput('text', 'captcha', '', 'Type the characters please :', 'size=15');
+$form->addPlugin('captcha', '#captcha');
+$form->addBtn('submit', 'submit-btn', 1, 'Submit', 'class=btn btn-success');
+$form->endFieldset();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -603,6 +693,146 @@ archives, while analyzing data to extract newfound knowledge and expand upon its
 		</div><!-- container -->
 
 		</div>
+		
+		
+		
+		
+		
+     
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-3">
+                    <a href="http://codecanyon.creation-site.org/phpforms/documentation/index.html" class="btn btn-primary btn-sm pull-right"><span class="glyphicon glyphicon-arrow-left prepend"></span>Back to Documentation</a>
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs">
+                      <li<?php if ($_SERVER["REQUEST_METHOD"] != "POST") echo ' class="active"'; ?>><a href="#code" data-toggle="tab">PHP Code</a></li>
+                      <li<?php if ($_SERVER["REQUEST_METHOD"] == "POST") echo ' class="active"'; ?>><a href="#result" data-toggle="tab">Result</a></li>
+                      <li><a href="#html" data-toggle="tab">HTML Result</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                      <div class="tab-pane<?php if ($_SERVER["REQUEST_METHOD"] != "POST") echo ' active'; ?>" id="code">
+                        <pre class="prettyprint"><?php
+                        echo htmlspecialchars('
+                        <?php
+
+                        /* =============================================
+                            start session and include form class
+                        ============================================= */
+
+                        use phpforms\Form;
+                        use phpforms\Validator\Validator;
+
+                        session_start();
+                        include_once(\'../Form.php\');
+
+                        /* =============================================
+                            validation if posted
+                        ============================================= */
+
+                        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                            include_once(\'../Validator/Validator.php\');
+                            include_once(\'../Validator/Exception.php\');
+                            $validator = new Validator($_POST);
+                            $required = array(\'username\', \'useremail\', \'userphone\', \'message\');
+                            foreach ($required as $required) {
+                                $validator->required()->validate($required);
+                            }
+                            $validator->email()->validate(\'useremail\');
+                            $validator->captcha(\'captcha\')->validate(\'captcha\');
+                            // check for errors
+                            if ($validator->hasErrors()) {
+                                $_SESSION[\'errors\'][\'my-contact-form\'] = $validator->getAllErrors();
+                            } else { // if posted values are ok
+                                $from_email = \'contact@codecanyon.creation-site.org\';
+                                $adress = \'john-doe@gmail.com\';
+                                $subject = \'test\';
+                                $filter_values = \'my-contact-form, captcha, submit-btn, captchaHash\';
+                                $sent_message = Form::sendMail($from_email, $adress, $subject, $filter_values);
+                                Form::clear(\'my-contact-form\');
+                            }
+                        }
+
+                        /* ==================================================
+                            for class and methods documentation,
+                            go to documentation/index.html
+                        ================================================== */
+
+                        $form = new Form(\'my-contact-form\');
+                        $form->startFieldset(\'Please fill in this form to contact us\');
+                        $form->addInput(\'text\', \'username\', \'\', \'Your name : \', \'required=required\');
+                        $form->addInput(\'email\', \'useremail\', \'\', \'Your email : \', \'required=required\');
+                        $form->addInput(\'text\', \'userphone\', \'\', \'Your phone : \', \'required=required\');
+                        $form->addOption(\'subject\', \'Support\', \'Support\');
+                        $form->addOption(\'subject\', \'Sales\', \'Sales\');
+                        $form->addOption(\'subject\', \'Other\', \'Other\');
+                        $form->addSelect(\'subject\', \'Subject : \');
+                        $form->addTextarea(\'message\', \'\', \'Your message : \', \'cols=30, rows=4, required=required\');
+                        $form->addPlugin(\'word-character-count\', \'#message\', \'default\', array(\'%maxAuthorized%\' => 100));
+                        $_SESSION[\'newsletter\'] = 1; // to add default-check.
+                        $form->addCheckbox(\'newsletter-checkboxes\', \'\', \'newsletter\', 1);
+                        $form->printCheckboxGroup(\'newsletter-checkboxes\', \'Suscribe to Newsletter :\');
+                        $form->addInput(\'text\', \'captcha\', \'\', \'Type the characters please :\', \'size=15\');
+                        $form->addPlugin(\'captcha\', \'#captcha\');
+                        $form->addBtn(\'submit\', \'submit-btn\', 1, \'Submit\', \'class=btn btn-success\');
+                        $form->endFieldset();
+                        ?>
+
+                        <html>
+                        <head>
+                            [...]
+                            <?php $form->printIncludes(\'css\'); ?>
+                        </head>
+                        <body>
+                            [...]
+                            <?php $form->render(); ?>
+                            [...]
+                            <?php
+                                $form->printIncludes(\'js\');
+                                $form->printJsCode();
+                            ?>
+                        </body>
+                        </html>'); ?></pre>
+                      </div>
+                      <div class="tab-pane<?php if ($_SERVER["REQUEST_METHOD"] == "POST") echo ' active'; ?>" id="result">
+                        <?php
+                            if (isset($sent_message)) {
+                                echo $sent_message;
+                            }
+                            $form->render();
+                        ?>
+                      </div>
+                      <div class="tab-pane" id="html">
+                        <p><span class="label label-default">&lt;head&gt; section : </span></p>
+                        <pre class="prettyprint"><?php echo htmlspecialchars('<link href="http://codecanyon.creation-site.org/phpforms/plugins/jquery-realperson/jquery.realperson.css" rel="stylesheet" media="screen">'); ?></pre>
+                        <p><span class="label label-default">The form : </span></p>
+                        <?php $form->render(true); ?>
+                        <p><span class="label label-default">JS : </span></p>
+                        <pre class="prettyprint"><?php echo htmlspecialchars('<script src="http://localhost/modelehtml5/DOCS/phpforms/plugins/jquery-realperson/jquery.realperson.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#captcha").realperson();
+    });
+</script>'); ?></pre>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- jQuery -->
+        <script src="//code.jquery.com/jquery.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+        <!-- Demo prettify code -->
+        <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+        <?php
+$form->printIncludes('js');
+$form->printJsCode();
+?>
+   
+		
+		
+		
 		
 		
 		

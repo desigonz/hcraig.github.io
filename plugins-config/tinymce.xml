@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<default>
+		<includes>
+			<!--
+				Path to css and js files into plugins folder.
+				If your files are not in plugins folder, use absolute paths.
+			-->
+			<css>
+				<file></file>
+			</css>
+			<js>
+                <file>tinymce/jquery.tinymce.min.js</file>
+			</js>
+		</includes>
+		<js_code>
+<![CDATA[
+    if (typeof(base_url) == "undefined") {
+        var base_url = location.protocol + '//' + location.host + '/';
+    }
+    $("%selector%").tinymce({
+
+        script_url : base_url + 'phpforms/plugins/tinymce/jquery.tinymce.min.js',
+        document_base_url: base_url,
+        relative_urls: false,
+        theme: "modern",
+        language: 'fr_FR',
+        element_format: "html",
+        // content_css : "/css/bootstrap.css, /css/main.css",
+        // menubar: "edit view insert table tools",
+        plugins: [
+            "advlist autolink autoresize charmap code codemirror contextmenu fullscreen link lists paste preview table visualblocks textcolor charmap media image responsivefilemanager"
+        ],
+        codemirror: {
+            indentOnInit: true, // Whether or not to indent code on init.
+            path: 'CodeMirror', // Path to CodeMirror distribution
+            config: {           // CodeMirror config object
+               mode: 'application/x-httpd-php' //,
+               // lineNumbers: false
+            },
+            jsFiles: [          // Additional JS files to load
+               'mode/php/php.js'
+            ]
+        },
+        entity_encoding : "raw",
+        contextmenu: "link image inserttable | cell row column deletetable",
+        toolbar: "undo redo | styleselect | bold italic | fontsizeselect | alignleft aligncenter alignright alignjustify | bullist numlist | link image preview | removeformat formats", // add 'responsivefilemanager' to add 'insert file' button
+        schema: "html5",
+        /* responsivefilemanager (configure /phpforms/plugins/filemanager/config/config.php) */
+        external_filemanager_path: base_url + "/phpforms/plugins/filemanager/",
+        filemanager_title: "Responsive Filemanager" ,
+        external_plugins: { "filemanager" : base_url + "/phpforms/plugins/filemanager/plugin.min.js"},
+        /* END responsivefilemanager */
+        image_advtab: true
+    });
+
+    <!-- IMPORTANT : the code below prevents a bug (impossible focus in plugins fields) with tinyMce in Bootstrap modal -->
+
+    $(document).on('focusin', function(e) {
+        if ($(event.target).closest(".mce-window").length) {
+            e.stopImmediatePropagation();
+        }
+    });
+]]>
+		</js_code>
+	</default>
+	<custom>
+		<!--
+			If you need differents includes for your custom code,
+			copy the default '<includes>' structure and put the needed files into '<file>' nodes.
+			You can add several files nodes if necessary.
+		-->
+		<js_code>
+			<!-- your custom code here -->
+		</js_code>
+	</custom>
+</root>
