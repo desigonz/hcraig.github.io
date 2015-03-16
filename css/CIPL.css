@@ -1,0 +1,301 @@
+a {
+  color: #666;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #666;
+  text-decoration: underline;
+}
+
+a[name] {
+  padding-top: 52px;
+  margin-top: -52px;
+  display: inline-block; /* required for webkit browsers */
+}
+
+.navbar .nav {
+  float: none;
+  position: static;
+  width: 82%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-text {
+	/*padding-top: 35px;*/
+/*	padding-bottom: 15px;*/
+	font-size: 4em;
+  line-height: 1.2em;
+	font-family: Helvetica, Arial, sans-serif; font-weight:bold; font-style:normal;
+	margin-top: auto;
+	margin-bottom: auto;
+	color: #000;
+}
+
+.subheader-text {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 1em;
+  font-family: Helvetica, Arial, sans-serif; font-weight: bold; font-style:normal;
+  line-height: 1.4em;
+  margin-top: auto;
+  margin-bottom: auto;
+  letter-spacing: 1.4px;
+}
+
+.subheader-text.details {
+  letter-spacing: 0.7px;
+  font-weight: 400;
+}
+
+.header-box {
+		padding-top: 100px;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;		
+}
+
+.header {
+  	padding-top: 45px;
+  	/*background-color: #1261e9;*/
+    /*background-image: url('../img/orange.jpg');*/    
+    display: block;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-bottom: 35px;
+    font-size: 1.5em;
+    min-height: 300px;
+    color: white;
+    -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.title-text {
+  margin: 13px 0;
+  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; font-weight:bold; font-style:normal;
+  text-transform: uppercase;
+  line-height: 40px;
+  text-align: center;
+  color: #00a551;
+  text-rendering: optimizelegibility;
+  font-size: 22.5px;
+  letter-spacing: 1.6px;
+}
+
+.subtitle-text {
+  padding-top:5px;
+  padding-bottom:5px;
+  font-family:"Helvetica Neue", Helvetica, Arial, sans-serif; font-weight:bold; font-style:normal;
+  line-height: 1.3em;
+  color: #000;
+  text-rendering: optimizelegibility;
+  font-size: 19px;
+}
+
+.content-container {
+	display: block;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.row {
+  	padding-top: 45px;
+    display: block;
+    padding-bottom: 35px;
+}
+
+.team-row {
+  	padding-top: 45px;
+    display: block;
+    border-bottom: #ddd solid 1px;
+    padding-bottom: 35px;
+    margin-left: -20px;
+}
+.row-content {
+  padding-top: 25px;
+	display: block;
+	min-height: 80px;
+	padding-bottom: 65px;	
+}
+
+.text-column {
+
+  font-size: 1.2em;
+  line-height: 1.4;
+
+}
+
+.row.column {
+  width: 80%;
+  padding: 0 5px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row.column.team {
+  padding-top: 30px;
+}
+
+.row.column.team.first {
+  padding-top: 15px;
+}
+
+.image-column-left {
+
+/*	width: 20%; */
+	padding-top: 10px;
+	float: left;
+}
+
+.image-column-left img {
+  max-width: 150px;
+}
+
+.image-column-right {
+
+	width: 20%;
+	padding-top: 10px;
+	float: right;
+}
+
+.text-column-left {
+
+  width: 60%;
+  padding-right: 5px;
+  float: left;
+}
+
+.text-column-right {
+	margin-left: 28%;
+}
+
+.half-column-left {
+	width: 48%;
+	padding-right: 2px;
+	float: left;
+}
+
+.half-column-right {
+	width: 48%;
+	padding-left: 2px;
+	float: right;
+}
+
+.team-text {
+	padding-top:10px;
+  font-size: .9em;
+  line-height: 140%;
+}
+
+.separator {
+  margin-top: 25px;
+	min-height: 20px;
+  background-image:url('../squiggle.png');
+  background-repeat:repeat-x;
+}
+
+.footer {
+  	color:#888;
+    width: 1170px;
+  	padding-top: 12px;
+  	background-color: #ddd;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 15%;
+
+    padding-bottom: 3px;
+    min-height: 15px;
+    -webkit-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+
+
+}
+
+.footertext {
+  color: #888;
+  display: block;
+  padding-bottom: 20px;
+/*  border-top: 1px #ddd solid; */
+}
+
+.image-text {
+
+	width: 60%;
+	margin-left: auto;
+	margin-right:auto;
+}
+
+.image-column-team {
+
+  width: 20%;
+  padding-top: 10px;
+  float: left;
+}
+
+.text-column-team {
+
+  width: 75%;
+  padding-left: 5px;
+  float: right;
+}
+
+/* Robot Arms */
+
+.robot-left {
+  position: fixed;
+  bottom: 0%;
+  left: 0%;
+  width: 17%;
+}
+
+.robot-right {
+  position: fixed;
+  top: 15%;
+  right: 0%;
+  width: 17%;
+}
+
+@media (max-width: 768px) {
+
+.row.column {
+  width: 95%;
+  padding: 10px 5px;
+}
+
+.content-container {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+}
+
+@media (max-width: 480px) {
+
+.header {
+    padding-top: 0;
+  }
+
+.header-box {
+  padding-top: 20px;
+}
+
+.navbar {
+  display:none;
+}
+
+.text-column-right {
+  margin-left: 0;
+}
+
+.image-column-left img {
+  display: none;
+}
+
+}
